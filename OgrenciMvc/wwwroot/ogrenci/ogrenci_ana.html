@@ -1,0 +1,462 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <title>KTÜN Öğrenci Bilgi Sistemi</title>
+    <link rel="shortcut icon" href="/Content/logo_2.png">
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="/Content/assets/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- page specific plugin styles -->
+    <!-- text fonts -->
+    <link rel="stylesheet" href="/Content/assets/css/fonts.googleapis.com.css">
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="/Content/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/Content/assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+    <link rel="stylesheet" href="/Content/assets/css/ace-skins.min.css">
+    <link rel="stylesheet" href="/Content/assets/css/ace-rtl.min.css">
+
+    <!--[if lte IE 9]>
+      <link rel="stylesheet" href="/Content/assets/css/ace-ie.min.css" />
+    <![endif]-->
+    <!-- inline styles related to this page -->
+    <!-- ace settings handler -->
+    <script src="/Content/assets/js/ace-extra.min.js"></script><style>@keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-moz-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-webkit-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-ms-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}@-o-keyframes nodeInserted{from{outline-color:#fff}to{outline-color:#000}}.ace-save-state{animation-duration:10ms;-o-animation-duration:10ms;-ms-animation-duration:10ms;-moz-animation-duration:10ms;-webkit-animation-duration:10ms;animation-delay:0s;-o-animation-delay:0s;-ms-animation-delay:0s;-moz-animation-delay:0s;-webkit-animation-delay:0s;animation-name:nodeInserted;-o-animation-name:nodeInserted;-ms-animation-name:nodeInserted;-moz-animation-name:nodeInserted;-webkit-animation-name:nodeInserted}</style>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+    <!--[if lte IE 8]>
+    <script src="/Content/assets/js/html5shiv.min.js"></script>
+    <script src="/Content/assets/js/respond.min.js"></script>
+    <![endif]-->
+    <!--[if !IE]> -->
+
+
+    <script src="/Content/assets/js/jquery-2.1.4.min.js"></script>
+
+
+    <style>
+        .table-header {
+            background: darkgrey !important;
+        }
+    </style>
+</head>
+
+<body class="skin-1">
+    <div id="navbar" class="navbar navbar-default          ace-save-state" style="background:#b52525!important">
+        <div class="navbar-container ace-save-state" id="navbar-container">
+            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                <span class="sr-only">Toggle sidebar</span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="navbar-header pull-left">
+                <a href="index.html" class="navbar-brand">
+                    <small>
+                        <img src="/Content/logo_2.png" width="20">
+                        KTÜN Öğrenci Bilgi Sistemi
+                    </small>
+                </a>
+            </div>
+
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav" style="">
+                    <li class="grey dropdown-modal user-min">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                             <b>RIZA TURANCAN YILMAZ</b>
+                            <span class="user-info">
+                                RIZA TURANCAN YILMAZ
+                            </span>
+
+                            <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="/Ogrenci/InternetSifreGuncelle">
+                                    <i class="ace-icon fa fa-lock"></i>
+                                    Şifre Değiştir
+                                </a>
+                            </li>
+
+                            <li class="divider"></li>
+
+                            <li>
+                                <a href="/Home/LogOutOgr">
+                                    <i class="ace-icon fa fa-power-off"></i>
+                                    Çıkış
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /.navbar-container -->
+    </div>
+
+    <div class="main-container ace-save-state" id="main-container">
+        <script type="text/javascript">
+            try { ace.settings.loadState('main-container') } catch (e) { }
+        </script>
+
+        <div id="sidebar" class="sidebar                  responsive                    ace-save-state" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
+            <script type="text/javascript">
+                try { ace.settings.loadState('sidebar') } catch (e) { }
+            </script>
+
+            <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                    <a class="btn btn-info" href="/Ogrenci/Anasayfa">
+                        <i class="ace-icon fa fa-home"></i>
+                    </a>
+
+                    <a class="btn btn-success" href="/Ogrenci/OnayTakip">
+                        <i class="ace-icon fa fa-check-square-o"></i>
+                    </a>
+
+                    <a class="btn btn-warning" href="/Ogrenci/SonYilNotlari">
+                        <i class="ace-icon fa fa-list"></i>
+                    </a>
+
+                    <a class="btn btn-danger" href="/Ogrenci/InternetSifreGuncelle">
+                        <i class="ace-icon fa fa-lock"></i>
+                    </a>
+                </div>
+
+                <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                    <span class="btn btn-success"></span>
+
+                    <span class="btn btn-info"></span>
+
+                    <span class="btn btn-warning"></span>
+
+                    <span class="btn btn-danger"></span>
+                </div>
+            </div><!-- /.sidebar-shortcuts -->
+
+            <div style="width:100%;text-align: center; margin-top: 5px;margin-bottom:10px">
+                <div>
+                    <a href="#">
+                        <img src="data:image/gif;base64,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" alt="Kullanıcı Resmi" style="width:72%;max-width:80%;border:groove; border-color:aliceblue">
+                    </a>
+                </div>
+
+                <!-- fotoğrafın altındaki düz çizgi -->
+                <span style="text-align: center;font-weight:bold;font-size:11px;color:white">171213049<br> RIZA TURANCAN YILMAZ</span>
+            </div>
+
+            <ul class="nav nav-list" style="top: 0px;">
+                <li class="hover active open">
+                    <a href="/Ogrenci/Anasayfa">
+                        <i class="menu-icon fa fa-home"></i>
+                        <span class="menu-text"> Anasayfa </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="hover ">
+                    <a href="/Ogrenci/OnayTakip">
+                        <i class="menu-icon fa fa-check-square-o"></i>
+                        <span class="menu-text"> Onay Takibi </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="hover ">
+                    <a href="/Ogrenci/SonYilNotlari">
+                        <i class="menu-icon fa fa-list"></i>
+                        <span class="menu-text"> Son Yıl Notları </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="hover ">
+                    <a href="/Ogrenci/NotDurumu">
+                        <i class="menu-icon fa fa-table"></i>
+                        <span class="menu-text"> Not Durumu </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="hover ">
+                    <a href="/Ogrenci/Transkript">
+                        <i class="menu-icon fa fa-list-alt"></i>
+                        <span class="menu-text"> Transkript </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="hover ">
+                    <a href="/Ogrenci/HarcDurumu">
+                        <i class="menu-icon fa fa-credit-card "></i>
+                        <span class="menu-text"> Harç Durumu </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+                <li class="hover ">
+                    <a href="/Ogrenci/SinavTarihleri">
+                        <i class="menu-icon fa fa-calendar"></i>
+                        <span class="menu-text"> Sınav Tarihleri </span>
+                    </a>
+
+                    <b class="arrow"></b>
+                </li>
+
+
+
+            </ul><!-- /.nav-list -->
+
+            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="main-content-inner">
+                <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+                    <!-- /.breadcrumb -->
+
+                </div>
+
+                <div class="page-content">
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            
+
+
+
+<style>
+    .bilgilerClass tr td:first-child {
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: 1366px) and (min-width: 0px) {
+        .isim_gizle {
+            display: none;
+        }
+    }
+</style>
+
+<div class="page-header">
+    <h1>Anasayfa</h1>
+</div><!-- /.page-header -->
+
+<div class="row">
+    <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
+        <div class="col-xs-12 col-sm-5 col-md-5">
+            
+
+            
+
+            <div class="col-sm-12 col-xs-12" style="margin-bottom:15px">
+                
+                <div class="profile-user-info profile-user-info-striped">
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Öğrenci No: </div>
+
+                        <div class="profile-info-value">
+                            <span class="editable editable-click" id="username">171213049</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Adı Soyadı: </div>
+
+                        <div class="profile-info-value">
+                            RIZA TURANCAN YILMAZ
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Fakülte: </div>
+
+                        <div class="profile-info-value">
+                            <i class="fa fa-map-marker light-orange bigger-110"></i>
+                            MÜHENDİSLİK  VE  DOĞA BİLİMLERİ FAKÜLTESİ
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Bölüm: </div>
+
+                        <div class="profile-info-value">
+                            <i class="fa fa-map-marker light-orange bigger-110"></i>
+                            BİLGİSAYAR MÜHENDİSLİĞİ
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Danışman: </div>
+
+                        <div class="profile-info-value">
+                            <i class="fa fa-user light-orange bigger-110"></i>
+                            Arş.Gör. ÜRÜN TUNALI
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Eposta: </div>
+
+                        <div class="profile-info-value">
+                            <i class="fa fa-email light-orange bigger-110"></i>
+                            f<text>171213049</text>@ktun.edu.tr
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-xs-12" style="margin-bottom:15px">
+                
+                <div class="profile-user-info profile-user-info-striped">
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Bölüm Adı: </div>
+
+                        <div class="profile-info-value">
+                            BİLGİSAYAR MÜHENDİSLİĞİ
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Bölüm Başkanı: </div>
+
+                        <div class="profile-info-value">
+                            Doç. Dr. Mesut Gündüz
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Email: </div>
+
+                        <div class="profile-info-value">
+                            <i class="fa fa-envelope light-blue bigger-110"></i>
+                            <a href="mailto:bilgisayar@ktun.edu.tr">bilgisayar@ktun.edu.tr</a>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Web Sayfası: </div>
+
+                        <div class="profile-info-value">
+                            <i class="fa fa-globe light-blue bigger-110"></i>
+                            <a href="http://ktun.edu.tr/Home/Bolumler/18" target="_blank">http://ktun.edu.tr/Home/Bolumler/18</a>
+                        </div>
+                    </div>
+
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"> Telefon: </div>
+
+                        <div class="profile-info-value">
+                            <i class="fa fa-phone-square light-blue bigger-110"></i>
+                            <a href="tel:+903322232004">+903322232004</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="col-xs-12 col-sm-7 col-md-7">
+
+            
+                                        <div class="profile-user-info profile-user-info-striped">
+                    <div class="profile-info-row">
+                        <div class="profile-info-name"></div>
+
+                        <div class="profile-info-value text-center" style="background-color:#EDF3F4;color:#336199;">
+                            <b>KİŞİSEL DUYURULARINIZ</b>
+                        </div>
+                    </div>
+                        <div class="profile-info-row">
+                            <div class="profile-info-name"></div>
+                            <div class="profile-info-value">
+                                "<div> <p> 3- Sevgili öğrencilerimiz Konya Teknik Üniversitesi Eğitim-Öğretim Sınav Yönetmelik çalışmaları devam etmektedir.             Bu çalışmalar tamamlanıncaya kadar Konya teknik Üniversitesi Senatosunun 5 Temmuz 2018 tarih ve 2018/14 sayılı karar gereğince Selçuk Üniversitesi Yönetmelikleri uygulamaya devam edilecektir.  </p><p>             </p><p>Dolayısıyla; </p>             <p>-2018-2019 Eğitim-Öğretim yılında Selçuk Üniversitesi Yönetmelikleri uygulanacaktır. </p>             <p>-Bağıl Sistem uygulaması devam etmektedir. </p>             <p>-Bütünleme Sınavları yapılacaktır. </p>             <p>-Yaz okulu açılmayacaktır. </p>             <p>Bu vesileyle çalışmalarınızda kolaylık ve başarılar dileriz. </p>             <p>Konya Teknik Üniversitesi  </p>             <p>Öğrenci İşleri Daire Başkanlığı </p>             <p>İletişim Bilgileri:  </p>             <p>Tlf: (0332) 2238665 - 2238721 </p>      </div><div> <p> 2- Öğrenci Kimlikleri İle İlgili Çalışma Devam Etmektedir.  Kimlikler, Kasım Ayı İçinde Dağıtılmaya Başlanacaktır...Rektörlük  </p><p> </p></div>   <div> <p> 1- Erasmus, Mevlana, Farabi vb. değişim programları ile ilgili olarak öğrencilerimiz Üniversite"""miz """KTÜN Dış İlişkiler Koordinatörlüğü""" ile iletişim kurabilirler.</p> <hr><h4 class="" "classic-title"""=""><span>KTÜN Dış İlişkiler Koordinatörlüğü</span></h4> <table class="" "table="" table-responsive="" table-hover="" table-striped"""=""> <tbody> <tr><td>Doç. Dr. Yağmur KÜÇÜKBEZİRCİ</td><td>Koordinatör</td></tr><tr> <td><a href="" "mailto:ykbezirci@yahoo.com"""="">ykbezirci@yahoo.com</a></td><td><a href="" "tel:+905314948080"""="">+90 (531) 494 80 80</a></td> </tr><tr><td>Arş. Gör. Dr. M. Hilmi AKSOY</td><td>Koord. Yrd.</td></tr><tr><td><a href="" "mailto:muharremaksoy@selcuk.edu.tr"""="">muharremaksoy@selcuk.edu.tr</a></td><td><a href="" "tel:+03322232720"""="">+90 (332) 223 27 20</a></td></tr><tr><td>Atilla Rıdvan ÜNBAL </td><td>Yazı İşleri</td></tr><tr><td></td><td></td></tr></tbody> </table></div>"
+                            </div>
+                        </div>
+                        <div class="profile-info-row">
+                            <div class="profile-info-name"></div>
+                            <div class="profile-info-value">
+                                
+                            </div>
+                        </div>
+                </div>
+        </div>
+
+        <!-- PAGE CONTENT ENDS -->
+    </div><!-- /.col -->
+</div><!-- /.row -->
+
+                            <!-- PAGE CONTENT ENDS -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.page-content -->
+            </div>
+        </div><!-- /.main-content -->
+
+        <div class="footer">
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <a href="https://ktun.edu.tr/tr/Birim/Hakkimizda/?brm=Wdj79v1/ar5MDxTI7HHtwQ==" target="_blank">
+                        <span class="bigger-120">
+                            KTÜN Bilgi İşlem Daire Başkanlığı ©2019
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+        </a>
+    </div><!-- /.main-container -->
+    <!-- basic scripts -->
+
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script src="/Content/assets/js/jquery-1.11.3.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='/Content/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>
+    <script src="/Content/assets/js/bootstrap.min.js"></script>
+
+    <!-- page specific plugin scripts -->
+    <!-- ace scripts -->
+    <script src="/Content/assets/js/ace-elements.min.js"></script>
+    <script src="/Content/assets/js/ace.min.js"></script>
+
+    <!-- inline scripts related to this page -->
+
+
+</body>
+
+
+
+
+
+

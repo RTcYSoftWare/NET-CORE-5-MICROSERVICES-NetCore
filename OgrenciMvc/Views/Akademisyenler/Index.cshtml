@@ -1,0 +1,85 @@
+﻿@model List<OgrenciMvc.Models.Ogrenci>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutYeni.cshtml";
+}
+
+<div class="page-spacer"></div>
+
+<div class="ml-5">
+    <h1> Staj Başvuruları </h1>
+
+    <p class="text -lg">
+        Öğrencilerinizin staj başvurularını kontrol, onaylama ve reddetme işlemlerini gerçekleştirebilirsiniz.
+    </p>
+
+</div>
+
+
+<div class="page-spacer"></div>
+
+<div>
+    <hr />
+</div>
+
+
+
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Öğrenci Adı
+                </th>
+                <th>
+                    Öğrenci Soyadı
+                </th>
+                <th>
+                    Öğrenci Emaili
+                </th>
+                <th>
+                    Staj Durumu
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoyAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    @if (item.StajBasvuruDurumu == false)
+                    {
+                        <td>
+                            ONAYLANMADI
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            ONAYLANDI
+                        </td>
+                    }
+
+                    <td>
+                        <a asp-action="Duzenle" asp-route-id="@item.OgrenciId">Staj Onayla</a> |
+                        <a asp-action="Detaylar" asp-route-id="@item.OgrenciId">Staj Belgeleri</a> |
+                        <a asp-action="Sil" asp-route-id="@item.OgrenciId">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

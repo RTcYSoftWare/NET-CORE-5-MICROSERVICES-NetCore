@@ -1,0 +1,50 @@
+﻿@{ ViewData["Title"] = "Giriş Ekranı";
+    Layout = null;
+    }
+
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="~/ogrenci/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/ogrenci/login.css">
+    <link rel="icon" type="~/ogrenci/image/png" href="top_ikon.png" />
+
+    <script src="~/ogrenci/bootstrap.min.js"></script>
+    <script src="~/ogrenci/jquery.min.js"></script>
+
+    <title>Öğrenci Girişi</title>
+
+</head>
+
+
+<body>
+
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img src="~/ogrenci/logo.png" id="icon" alt="User Icon" />
+            </div>
+
+            <!-- Login Form -->       
+            
+                <input type="text" id="login" class="fadeIn second" name="anasayfa" placeholder="f1213456789@ktun.edu.tr" required="">
+                <input type="password" id="password" class="fadeIn third" name="anasayfa" placeholder="Şifrenizi Giriniz" required="">
+                <a class="fadeIn fourth" asp-action="Anasayfa" asp-route-id="7">Giriş Yap</a>                    
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Sorun mu Yaşıyorsunuz ?</a>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+
+
+</html>

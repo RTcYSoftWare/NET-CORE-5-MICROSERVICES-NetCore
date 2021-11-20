@@ -1,0 +1,127 @@
+﻿@model Ogrenci
+@{
+    ViewData["Title"] = "StajDurumu";
+    Layout = "~/Views/Shared/_LayoutYeni.cshtml";
+}
+
+
+<div class="page-spacer"></div>
+
+<div class="ml-5">
+    <div class="uk-container">
+        <div class="flex gap-12">
+            <div class="w-1/5 space-y-4 uk-visible@m">
+                <div class="grid grid-cols-1 gap-1 ustmenu">
+                    <a href="/ogrenciler/Anasayfa/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Anasayafa</a>
+                    <a href="/ogrenciler/StajBasvurusu/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Staj Başvurum</a>
+                    <a href="/ogrenciler/StajDurumu/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Güncel Staj Durumu</a>
+                    <a href="/ogrenciler/SoruCevap/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Sorular</a>
+                </div>
+            </div>
+            <div class="w-4/5">
+
+                <div class="card mb-4">
+                    <div class="row no-gutters row-bordered">
+                        <div class="d-flex col-md align-items-center">
+                            <form class="col">
+                                <div class="form-group">
+                                    <label class="text-red-500" for="exampleFormControlTextarea1"> Stajın @ViewBag.Gun. Günü Yaptıklarınızı Giriniz</label>
+                                    <textarea class="form-control"
+                                              id="exampleFormControlTextarea1"
+                                              rows="3"></textarea>
+                                </div>
+                                <button type="button" class="mb-2 btn_ogrenciler_staj_gun_kaydet btn btn-primary">Kaydet</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                @if (Model.StajGunu == 0)
+                {
+                    <h1>Henüz Yaptıklarınızı Girmediniz </h1>
+                }
+                else
+                {
+                    @if (@Model.StajGun1 != null)
+                    {
+                        <div class="card mb-3" style="width: 18rem">
+                            <div class="card-body">
+                                <h5 class="card-title">Staj Defteri</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">1. Gün</h6>
+                                <p class="card-text">
+                                    @Model.StajGun1
+                                </p>
+                                <a href="./Staj_Defteri_Duzenle.html" class="card-link">Düzenle</a>
+                            </div>
+                        </div>
+                    }
+                    @if (@Model.StajGun2 != null)
+                    {
+                        <div class="card mb-3" style="width: 18rem">
+                            <div class="card-body">
+                                <h5 class="card-title">Staj Defteri</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">2. Gün</h6>
+                                <p class="card-text">
+                                    @Model.StajGun2
+                                </p>
+                                <a href="./Staj_Defteri_Duzenle.html" class="card-link">Düzenle</a>
+                            </div>
+                        </div>
+                    }
+                    @if (@Model.StajGun3 != null)
+                    {
+                        <div class="card mb-3" style="width: 18rem">
+                            <div class="card-body">
+                                <h5 class="card-title">Staj Defteri</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">3. Gün</h6>
+                                <p class="card-text">
+                                    @Model.StajGun3
+                                </p>
+                                <a href="./Staj_Defteri_Duzenle.html" class="card-link">Düzenle</a>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="page-spacer"></div>
+<div class="page-spacer"></div>
+<div class="page-spacer"></div>
+<div class="page-spacer"></div>
+
+
+<script>
+    $(document).ready(function () {
+        $(".btn_ogrenciler_staj_gun_kaydet").click(function () {
+            let id = @ViewBag.Id;
+            let gun = $("#exampleFormControlTextarea1").val();
+            let g_numara = @ViewBag.Gun;
+
+            $.ajax({
+                url: "/ogrenciler/GunKaydet",
+                type: "POST",
+                data: { id: id, gun: gun, gun_numarasi: g_numara },
+                success: function (data) {
+                    if (data == "1") {
+                        alert("STAJ GÜNÜ YAPTIKLARINIZ KAYDEDİLDİ !!!");
+                        window.location.href = "/ogrenciler/StajDurumu/@ViewBag.Id";
+                    }
+                    else if (data == "2") {
+                        alert("BİLİNMEYEN BİR HATA OLDU !!!");
+                    }
+                    else if (data == "3") {
+                        alert("İNPUT ALANINI BOŞ GİREMZSİNİZ !!!");
+                    }
+                    else if (data == "4") {
+                        alert("GİREBİLECEĞİNİZ MAKSİMUM GÜN SAYISINA ULAŞTINIZ !!!");
+                    }
+                }
+            });
+        });
+    });
+</script>

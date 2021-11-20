@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewData["Title"] = "Yeni";
+    Layout = "~/Views/Shared/_LayoutYeni.cshtml";
+}
+
+
+
+
+<div class="-mt-20 bg-center  bg-cover"
+     style="background-blend-mode: color-burn; background-color: rgb(0 , 0 , 0  , 24% )"
+     data-src="~/assets/images/hero.jpg" uk-img>
+    <div class="uk-container lg:pt-48 pt-32 pb-20">
+
+        <div class="flex">
+            <div class="lg:text-left lg:w-5/12 space-y-6 text-center uk-light">
+                <h1 class="lg:text-5xl text-3xl leading-none"> Staj Otomasyon Sistemine<br class="uk-visible@s">  Hoş Geldiniz </h1>
+                <p class="text-lg">
+                    Öğrencileriniz başvurularını onaylayabilir, öğrencileriniz ile iletişime geçebilir ve staj süresi boyunca öğrencilerinizi buradan
+                    takip edebilirsiniz.
+                </p>
+
+                <a href="Index"
+                   class="py-2 px-6 bg-gray-400 hover:bg-gray-500 bg-opacity-25 text-white rounded-full text-md inline-block mr-3">
+                    Tüm Öğrenciler
+                </a>
+                @*<a href="#" class="py-3 px-3 text-blue-500 rounded-md text-md inline-block"> View Plans </a>*@
+            </div>
+        </div>
+
+    </div>
+
+    <div class="transform">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" class="text-gray-200 fill-current">
+            <path d="M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z"></path>
+        </svg>
+    </div>
+
+</div>
+
+<div class="lg:pb-32 pb-12 pt-2">
+    <div class="uk-container">
+
+        <div class="text-center md:w-2/4 m-auto mb-12">
+            <h1 class="lg:text-3xl text-2xl mb-4"> Hoş Geldiniz <span class="font-bold text-green-600">  Geldiniz </span> </h1>
+            <p class="text -lg ">
+                Öğrencilerinizin başvurularını onaylayabilir, öğrencileriniz ile iletişime geçebilir ve staj süresi boyunca öğrencilerinizi buradan
+                takip edebilirsiniz.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6 text-center">
+            <div class="lg:p-8 pt-2">
+                <img src="~/assets/images/icons/academic-cap.svg" class="w-1/4 opacity-75 rounded-md h-auto object-cover m-auto mb-2">
+                <h1 class="lg:text-2xl text-xl font-bold mb-3"> Staj Başvuruları </h1>
+                <p class="text-base">
+                    Öğrencilerinizin başvurularını kontrol, onaylama ve reddetme durumlarına gidebilirsiniz.
+                </p>
+                <a href="Index" class=" text-green-400 mt-4 inline-block "> Sayfaya Git </a>
+            </div>
+            <div class="lg:p-8 pt-2">
+                <img src="~/assets/images/icons/book-open.svg" class="w-1/4 opacity-75 rounded-md h-auto object-cover m-auto mb-2">
+                <h1 class="lg:text-2xl text-xl font-bold mb-3"> Soru & Cevap </h1>
+                <p class="text-base">
+                    Öğrencilerinizin sorularını cevaplayabilir, staj ile ilgili yeni duyurular oluşturabilirsiniz.
+                </p>
+                <a href="SoruCevap" class=" text-green-400 mt-4 inline-block "> Sayfaya Git </a>
+            </div>
+            <div class="lg:p-8 pt-2">
+                <img src="~/assets/images/icons/play.svg" class="w-1/4 opacity-75 rounded-md h-auto object-cover m-auto mb-2">
+                <h1 class="lg:text-2xl text-xl font-bold mb-3"> Güncel Staj Durumu</h1>
+                <p class="text-base">
+                    Stajı devam eden öğrencilerinizi kontrol edebilir. Biten öğrencilerinizin stajlarını değerlendirebilirsiniz.
+                </p>
+                <a href="StajDurum" class=" text-green-400 mt-4 inline-block "> Sayfaya Git </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,165 @@
+﻿@model OgrenciMvc.Models.Ogrenci
+
+@{ ViewData["Title"] = "Anasayfa";
+
+    Layout = "~/Views/Shared/_LayoutYeni.cshtml"; 
+}
+
+
+<link rel="stylesheet" href="~/assets/css/profil.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+
+<link rel="stylesheet" href="~/assets/css/icons.css">
+
+<div class="page-spacer"></div>
+
+<div class="uk-container">
+    <div class="flex gap-12">
+        <div class="w-1/5 space-y-4 uk-visible@m">
+            <div class="grid grid-cols-1 gap-1 ustmenu">
+                <a href="/ogrenciler/Anasayfa/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Anasayafa</a>
+                <a href="/ogrenciler/StajBasvurusu/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Staj Başvurum</a>
+                <a href="/ogrenciler/StajDurumu/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Güncel Staj Durumu</a>
+                <a href="/ogrenciler/SoruCevap/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Sorular</a>
+            </div>
+        </div>
+        <div class="w-4/5">
+
+            <div class="container">
+                <div class="main-body">
+
+                    <div class="row gutters-sm">
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                                        <div class="mt-3">
+                                            <h4>@Model.Adi @Model.SoyAdi</h4>
+                                            <p class="text-secondary mb-1">RTcY Software Kurucu Başkan</p>
+                                            <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Öğrenci No:</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            171213049
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Adı Soyadı:</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            @Model.Adi @Model.SoyAdi
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Fakülte:</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            MÜHENDİSLİK VE DOĞA BİLİMLERİ FAKÜLTESİ
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Bölüm:</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            Bilgisayar Mühendisliği
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Eposta:</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            @Model.Email
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row gutters-sm">
+                                <div class="col-sm-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Staj Durum Bilgisi</i></h6>
+                                            <small>Staj Belge-1</small>
+                                            <div class="mb-3" style="height: 5px">
+                                                @if (Model.StajBasvuruFormu != null)
+                                                {
+                                                    <a href="/ogrenciler/StajBasvurusu" class="text-sm font-bold inline-block text-green-600">Yüklendi</a>
+                                                }
+                                                else
+                                                {
+                                                    <a href="/ogrenciler/StajBasvurusu" class="text-sm font-bold inline-block text-red-600">Yüklenmedi</a>
+                                                }
+                                            </div>
+                                            <small>Staj Belge-2</small>
+                                            <div class="mb-3" style="height: 5px">
+                                                @if (Model.StajSaglikFormu != null)
+                                                {
+                                                    <a href="/ogrenciler/StajBasvurusu" class="text-sm font-bold inline-block text-green-600">Yüklendi</a>
+                                                }
+                                                else
+                                                {
+                                                    <a href="/ogrenciler/StajBasvurusu" class="text-sm font-bold inline-block text-red-600">Yüklenmedi</a>
+                                                }
+                                            </div>
+                                            <small>Staj Belge-3</small>
+                                            <div class="mb-3" style="height: 5px">
+                                                @if (Model.StajUcertFormu != null)
+                                                {
+                                                    <a href="/ogrenciler/StajBasvurusu" class="text-sm font-bold inline-block text-green-600">Yüklendi</a>
+                                                }
+                                                else
+                                                {
+                                                    <a href="/ogrenciler/StajBasvurusu" class="text-sm font-bold inline-block text-red-600">Yüklenmedi</a>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">Duyurular</i></h6>
+                                            <a>Duyuru-1</a>
+                                            <br>
+                                            <small>Selam</small>
+                                            <hr>
+                                            <a>Duyuru-2</a>
+                                            <br>
+                                            <small>Melaba</small>
+                                            <hr><a>Duyuru-3</a>
+                                            <br>
+                                            <small>Deneme</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

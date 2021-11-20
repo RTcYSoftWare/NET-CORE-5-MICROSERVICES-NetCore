@@ -1,0 +1,48 @@
+.ana_div1{
+	width:50%;
+	height:100%;
+	display: inline-block;
+}
+.ana_div2{
+	width:50%;
+	height:100%;
+	float:right;
+	border-left: 1px solid black;
+}
+.ogrenci_bilgi_karti{
+	margin-top: 50px;
+	margin-left: 100px;
+	margin-bottom:50px;
+	width: auto;
+	height: auto;
+	border:1px;
+	border-style: solid;
+	display: table;
+
+}
+
+.ogrenci_bilgi_satiri {
+  background-color: #c1faff;
+  border-left: 6px solid #f44336;
+  width: auto;
+  height: auto;
+  padding:5px;
+  margin:2px;
+}
+
+.bilgi_basligi{
+	width: auto;
+	height: auto;
+	display: inline-block;
+
+}
+.bilgi_metni{
+	width: auto;
+	height: auto;
+	display: inline-block;
+}
+
+
+
+
+

@@ -1,0 +1,168 @@
+﻿@model Ogrenci
+@{
+    ViewData["Title"] = "StajPuanla";
+    Layout = "~/Views/Shared/_LayoutYeni.cshtml";
+}
+
+<div class="page-spacer"></div>
+
+<div class="ml-5">
+    @if (Model.Devam != null)
+    {
+        <h1> @Model.Adi @Model.SoyAdi Adlı Stajyerinize Verdiğiniz Puanlar </h1>
+    }
+    else
+    {
+        <h1> @Model.Adi @Model.SoyAdi Adlı Stajyerinize Puan Veriyorsunuz </h1>
+    }
+
+    <p class="text -lg">
+        Bünyeniz altında bulunan stajyerlere puan verin.
+    </p>
+
+</div>
+
+
+<div class="page-spacer"></div>
+
+<div>
+    <hr />
+</div>
+
+@if (Model.Devam != null)
+{
+    <div class="max-w-3xl m-auto py-10 px-4">
+        <div class="bg-white lg:p-12 p-6 space-y-3">
+            <div>
+                <label class="mb-0"> DEVAM </label>
+                <input readonly placeholder="@Model.Devam"
+                       class="bg-gray-200 inp_staj_sef_devam shadow-none border focus:border-blue-600 mt-2 outline-none px-3 py-2 rounded-md w-full">
+            </div>
+            <div>
+                <label class="mb-0"> ÇALIŞMA VE GAYRET </label>
+                <input readonly placeholder="@Model.CalismaVeGayret"
+                       class="bg-gray-200 inp_staj_sef_gayret shadow-none border w-full px-3 py-2 rounded-md focus:border-blue-600 outline-none mt-2">
+            </div>
+            <div>
+                <label class="mb-0"> İŞİ VAKTİNDE VE TAM YAPMA </label>
+                <input readonly placeholder="@Model.IsiVaktindeTamYapma"
+                       class="bg-gray-200 inp_staj_sef_is_vakti shadow-none border w-full px-3 py-2 rounded-md focus:border-blue-600 outline-none mt-2">
+            </div>
+            <div>
+                <label class="mb-0"> TAVIR VE HAREKET (GENEL) </label>
+                <input readonly placeholder="@Model.TavirHareketGenel"
+                       class="bg-gray-200 inp_staj_sef_tavir shadow-none border w-full px-3 py-2 rounded-md focus:border-blue-600 outline-none mt-2">
+            </div>
+            <div>
+                <label class="mb-0"> TAVIR VE HAREKET (İŞÇİLERE VE ARKADAŞLARA) </label>
+                <input readonly placeholder="@Model.TavirHareketIsAkradas"
+                       class="bg-gray-200 inp_staj_sef_tavir2 shadow-none border w-full px-3 py-2 rounded-md focus:border-blue-600 outline-none mt-2">
+            </div>
+
+
+            <button type="button"
+                    class="bg-blue-600 btn_staj_sef_puan_ver_listeye_don font-semibold p-2 mt-2 rounded-md text-center text-green-600 text-white w-full">
+                Listeye Dön
+            </button>
+        </div>
+    </div>
+}
+else
+{
+
+
+    <div class="max-w-3xl m-auto py-10 px-4">
+        <div class="bg-white lg:p-12 p-6 space-y-3">
+            <div>
+                <label class="mb-0"> DEVAM </label>
+                <input placeholder="AA, BB, CC..."
+                       class="bg-gray-200 inp_staj_sef_devam shadow-none border focus:border-blue-600 mt-2 outline-none px-3 py-2 rounded-md w-full">
+            </div>
+            <div>
+                <label class="mb-0"> ÇALIŞMA VE GAYRET </label>
+                <input placeholder="AA, BB, CC..."
+                       class="bg-gray-200 inp_staj_sef_gayret shadow-none border w-full px-3 py-2 rounded-md focus:border-blue-600 outline-none mt-2">
+            </div>
+            <div>
+                <label class="mb-0"> İŞİ VAKTİNDE VE TAM YAPMA </label>
+                <input placeholder="AA, BB, CC..."
+                       class="bg-gray-200 inp_staj_sef_is_vakti shadow-none border w-full px-3 py-2 rounded-md focus:border-blue-600 outline-none mt-2">
+            </div>
+            <div>
+                <label class="mb-0"> TAVIR VE HAREKET (GENEL) </label>
+                <input placeholder="AA, BB, CC..."
+                       class="bg-gray-200 inp_staj_sef_tavir shadow-none border w-full px-3 py-2 rounded-md focus:border-blue-600 outline-none mt-2">
+            </div>
+            <div>
+                <label class="mb-0"> TAVIR VE HAREKET (İŞÇİLERE VE ARKADAŞLARA) </label>
+                <input placeholder="AA, BB, CC..."
+                       class="bg-gray-200 inp_staj_sef_tavir2 shadow-none border w-full px-3 py-2 rounded-md focus:border-blue-600 outline-none mt-2">
+            </div>
+
+
+            <button type="button"
+                    class="bg-blue-600 btn_staj_sef_not_ver font-semibold p-2 mt-2 rounded-md text-center text-green-600 text-white w-full">
+                NOT KAYDET
+            </button>
+        </div>
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+
+        $(".btn_staj_sef_puan_ver_listeye_don").click(function () {
+
+            window.location.href = "/stajsef/Index";
+        });
+
+        $(".btn_staj_sef_not_ver").click(function () {
+
+            let id = @Model.OgrenciId;
+            let n1 = $(".inp_staj_sef_devam").val();
+            let n2 = $(".inp_staj_sef_gayret").val();
+            let n3 = $(".inp_staj_sef_is_vakti").val();
+            let n4 = $(".inp_staj_sef_tavir").val();
+            let n5 = $(".inp_staj_sef_tavir2").val();
+
+            console.log(id, n1, n2, n3, n4, n5);
+
+            $.ajax({
+                url: "/stajsef/Puanla",
+                type: "POST",
+                data: { id: id, n1: n1, n2: n2, n3: n3, n4: n4, n5: n5 },
+                success: function (data) {
+                    if (data == "1") {
+                        alert("NOTLAR KAYDEDİLDİ !!!");
+                        window.location.href = "/stajsef/Index";
+                    }
+                    else if (data == "2") {
+                        alert("NOT VERİLECEK ÖĞRENCİ BULUNAMADI !!!");
+                        window.location.href = "/stajsef/StajPuanla";
+                    }
+                    else if (data == "3") {
+                        alert("BÜTÜN ALANLARI DOLDURUNUZ !!!");
+                    }
+                    else if (data == "0") {
+                        alert("BEKLENMEYEN BİR HATA OLUŞTU !!!");
+                        window.location.href = "/stajsef/StajPuanla";
+                    }
+
+
+
+                }
+
+            });
+
+
+
+        });
+
+
+
+    })
+
+
+</script>
+
+

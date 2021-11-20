@@ -1,0 +1,97 @@
+﻿@model OgrenciMvc.Models.Ogrenci
+@{
+    ViewData["Title"] = "Duzenle";
+    Layout = "~/Views/Shared/_LayoutYeni.cshtml";
+}
+
+
+
+<div class="page-spacer"></div>
+<div class="page-spacer"></div>
+
+
+<div class="uk-container">
+    <div class="m-auto">
+        <h4>ÖĞRENCİ</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Duzenle">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="OgrenciId" />
+                    <div class="form-group">
+                        <label asp-for="Adi" class="control-label"></label>
+                        <input asp-for="Adi" class="form-control" />
+                        <span asp-validation-for="Adi" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SoyAdi" class="control-label"></label>
+                        <input asp-for="SoyAdi" class="form-control" />
+                        <span asp-validation-for="SoyAdi" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StajBasvuruFormu" class="control-label"></label>
+                        @if (Model.StajBasvuruFormu == null)
+                        {
+                            <span asp-validation-for="StajBasvuruFormu" class="text-danger">YÜKLENMEDİ</span>
+                        }
+                        else
+                        {
+                            <img src="@Model.StajBasvuruFormu" style="width:250px; height:400px;" />
+                        }
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StajSaglikFormu" class="control-label"></label>
+                        @if (Model.StajSaglikFormu == null)
+                        {
+                            <span asp-validation-for="StajSaglikFormu" class="text-danger">YÜKLENMEDİ</span>
+                        }
+                        else
+                        {
+                            <iframe src="@Model.StajSaglikFormu" style="width:250px; height:400px;" ></iframe>
+                            @*<img src="@Model.StajSaglikFormu" style="width:250px; height:400px;" />*@
+                        }
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StajUcertFormu" class="control-label"></label>
+                        @if (Model.StajUcertFormu == null)
+                        {
+                            <span asp-validation-for="StajUcertFormu" class="text-danger">YÜKLENMEDİ</span>
+                        }
+                        else
+                        {
+                            <img src="@Model.StajUcertFormu" style="width:250px; height:400px;" />
+                        }
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StajBasvuruDurumu" class="control-label">ONAYLA</label>
+                        <input asp-for="StajBasvuruDurumu" class="form-control" />
+                        <span asp-validation-for="StajBasvuruDurumu" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Kaydet" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+            <div>
+
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Listeye Geri Dön</a>
+        </div>
+    </div>
+
+
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,171 @@
+﻿@model OgrenciMvc.Models.Ogrenci
+@{
+    ViewData["Title"] = "StajBasvurusu";
+    Layout = "~/Views/Shared/_LayoutYeni.cshtml";
+}
+
+
+
+
+<link rel="stylesheet" type="text/css" href="~/ogrenci/stajBasvuru.css">
+<link rel="stylesheet" type="text/css" href="~/ogrenci/bootstrap.min.css">
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="~/assets/css/guncel_staj.css" />
+
+
+
+
+
+</head>
+
+<body>
+    <div class="page-spacer"></div>
+
+    <div class="uk-container">
+        <div class="flex gap-12">
+            <div class="w-1/5 space-y-4 uk-visible@m">
+                <div class="grid grid-cols-1 gap-1 ustmenu">
+                    <a href="/ogrenciler/Anasayfa/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Anasayafa</a>
+                    <a href="/ogrenciler/StajBasvurusu/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Staj Başvurum</a>
+                    <a href="/ogrenciler/StajDurumu/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Güncel Staj Durumu</a>
+                    <a href="/ogrenciler/SoruCevap/@ViewBag.Id" class="bg-gray-300 inline-block px-4 py-2 font-semibold rounded-md text-center text-gray-700 hover:text-gray-700 hover:bg-gray-400">Sorular</a>
+                </div>
+            </div>
+            <div class="container">
+                <form asp-action="StajBasvurusu" enctype="multipart/form-data" method="post">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                <iframe id="if1" src=""></iframe>
+                                <div class="card-body">
+                                    <div>
+                                        Staj Başvuru Formu
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                                <input type="file" id="dosyalar" name="inp_staj_dosya1"
+                                                       onchange="readURL(this,'if1');" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow"
+                                 style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                <iframe id="if2" src=""></iframe>
+                                <div class="card-body">
+                                    <div>
+                                        Sağlık hizmet Bildirimi Formu
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                                <input type="file"
+                                                       onchange="readURL(this,'if2');" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow"
+                                 style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                <iframe id="if3" src=""></iframe>
+                                <div class="card-body">
+                                    <div>
+                                        Nüfus Cüzdanı Fotokopisi
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                                <input type="file"
+                                                       onchange="readURL(this,'if3');" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow"
+                                 style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                <iframe id="if4" src=""></iframe>
+                                <div class="card-body">
+                                    <div>
+                                        Staj Ücretlerine İşsizlik Fonu Katkısı
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-outline-secondary">
+                                                <input type="file"
+                                                       onchange="readURL(this,'if4');" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                            class="bg-blue-600 font-semibold p-2 mt-2 rounded-md text-center text-green-600 text-white">
+                        Dosyaları Kaydet
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    function readURL(input, id) {
+        var i = 0;
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("#" + id).attr("src", e.target.result).width(297.5).height(421);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="dosyaYuklemeDiv">
+
+
+
+
+
+</div>

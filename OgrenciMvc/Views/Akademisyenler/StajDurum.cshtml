@@ -1,0 +1,68 @@
+﻿@model List<Ogrenci>
+@{
+    ViewData["Title"] = "StajDurum";
+    Layout = "~/Views/Shared/_LayoutYeni.cshtml";
+}
+
+
+
+<div class="page-spacer"></div>
+
+<div class="ml-5">
+    <h1> Güncel Staj Durumu </h1>
+
+    <p class="text -lg">
+        Öğrencilerinizin staj başvurularını kontrol, onaylama ve reddetme işlemlerini gerçekleştirebilirsiniz.
+    </p>
+
+</div>
+
+
+<div class="page-spacer"></div>
+
+<div>
+    <hr />
+</div>
+
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Öğrenci Adı
+                </th>
+                <th>
+                    Öğrenci Soyadı
+                </th>
+                <th>
+                    Öğrenci Emaili
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SoyAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+
+                    <td>
+                        <a asp-action="PuanGor" asp-route-id="@item.OgrenciId">Puanı Gör</a> |
+                        <a asp-action="StajPuanla" asp-route-id="@item.OgrenciId">Güncel Durumu</a> 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,72 @@
+﻿@model List<OgrenciMvc.Models.Ogrenci>
+
+@{
+    ViewData["Title"] = "SoruCevap";
+    Layout = "~/Views/Shared/_LayoutYeni.cshtml";
+}
+
+
+<div class="page-spacer"></div>
+
+<div class="ml-5">
+    <h1>Soru & Cevap</h1>
+
+    <p class="text -lg">
+        Öğrencilerinizin sorularını cevaplayabilir, staj ile ilgili yeni duyurular oluşturabilirsiniz.
+    </p>
+
+</div>
+
+
+<div class="page-spacer"></div>
+
+<div>
+    <hr />
+</div>
+
+
+
+<div class="max-w-3xl m-auto py-10 px-4">
+    <h3 class="mb-4"> Sorular </h3>
+
+
+    @foreach (var item in Model)
+    {
+        @if (!item.Soru1.Equals(" "))
+        {
+            <div class="flex gap-x-4 mb-5 relative">
+                <img src="~/assets/images/avatars/avatar-4.jpg" alt="" class="rounded-full shadow w-12 h-12">
+                <div>
+                    <h4 class="text-base m-0"> @item.Adi @item.SoyAdi</h4>
+                    <span class="text-gray-700 text-sm"> @item.Email </span>
+                    <p class="mt-3">
+                        @item.Soru1
+                    </p>
+
+                    @if (item.Cevap1 != null)
+                    {
+                        <p class="mt-3 text-sm font-bold inline-block text-green-400">
+                            CEVAP : @item.Cevap1
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="mt-3 text-sm font-bold inline-block text-green-400">
+                            CEVAP EKLENMEDİ
+                        </p>
+                    }
+
+                    <div class="flex justify-center items-center absolute right-0 top-0">
+                        <a href="/Akademisyenler/CevapEkle/@item.OgrenciId" class="bg-white flex flex-none btn_akademisyen_soru_cevap_ekle h-10 inline-block items-center justify-center rounded-full text-center text-blue-600 w-10" data-tippy-placement="right" title="Cevap Ekleyin" data-tippy-theme="light" style="cursor:pointer;">
+                            <i class="uil-plus-square"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        }
+    }
+
+</div>
+
+

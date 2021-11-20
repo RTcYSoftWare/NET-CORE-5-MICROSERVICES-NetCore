@@ -1,0 +1,102 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.main {
+    padding: 16px;
+    /*margin-top: 100px;
+    margin-left: 100px; /* Same as the width of the sidenav */
+    /*height: 1500px;*/ /* Used in this example to enable scrolling */
+}
+
+
+.sidebar-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.sidebar-header .user-pic {
+    width: 100%;
+    max-width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.sidebar-header .user-pic img {
+    object-fit: cover;
+    height: 80%;
+    width: 80%;
+    border: groove;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sidebar-header .user-pic span {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dropdown-menu {
+    right: 0;
+}

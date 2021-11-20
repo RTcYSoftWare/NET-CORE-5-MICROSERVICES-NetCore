@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <title>Akademisyen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="KTUN Staj Otomasyon Sisemi. Gelişimin Öncüsü">
+
+    <!-- Favicon -->
+    <link href="~/ogrenci/top_ikon.png" rel="icon" type="image/png">
+
+
+    <script src="~/assets/js/jquery-3.3.1.min.js"></script>
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/assets/css/uikit.css">
+    <link rel="stylesheet" href="~/assets/css/tailwind.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link href="~/assets/css/uikit.css" rel="stylesheet" />
+    <!-- icons
+    ================================================== -->
+    <link rel="stylesheet" href="~/assets/css/icons.css">
+</head>
+
+<body>
+
+
+
+    <div id="Wrapper">
+
+        <header class=" is-dark border-b border-gray-400"
+                uk-sticky="cls-inactive: is-dark  border-b">
+            <div class="header_inner">
+                <div class="left-side">
+
+                    <!-- Logo -->
+                    <div id="logo">
+                        <a href="/akademisyenler/Yeni">
+                            <img src="~/image/ktunbannerlogo.png" />
+                            @*<img src="~/assets/images/logo.png" alt="">*@
+                            <img src="~/image/ktunbannerlogo.png" class="logo_inverse" alt="" />
+                            @*<img src="~/image/ktunbannerlogo.png" class="logo_inverse" alt="" />*@
+                            @*<img src="~/assets/images/logo-light.png" class="logo_inverse" alt="">*@
+                            <img src="~/assets/images/logo-mobile.png" class="logo_mobile" alt="">
+                        </a>
+                    </div>
+
+                    <div class="triger" uk-toggle="target: .header_menu ; cls: is-visible">
+                        <i class="uil-bars"></i>
+                    </div>
+
+                    <ul class="header_menu">
+                        <li><a href="/akademisyenler/Yeni" class="active"> Anasayfa </a> </li>
+                        <li>
+                            <a href="#"> Öğrenciler </a>
+
+                        </li>
+                        @*<li><a href="books.html"> Book </a> </li>
+                            <li><a href="blog.html"> Blog</a> </li>
+                            <li>
+                                <a href="#"> Pages</a>
+                                <div uk-drop="mode: click" class="xdropdown">
+                                    <ul>
+                                        <li> <a href="pages-about.html"> About </a></li>
+                                        <li> <a href="pages-contact.html"> Contact us </a></li>
+                                        <li> <a href="course-intro.html"> Course intro 1 </a></li>
+                                        <li> <a href="course-intro-2.html"> Course intro 2 </a></li>
+                                    </ul>
+                                </div>
+                            </li>*@
+                    </ul>
+
+                    <div class="overly" uk-toggle="target: .header_menu ; cls: is-visible"></div>
+
+                </div>
+                <div class="right-side">
+
+                    <a href="#" class="header-links-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </a>
+                    <div uk-drop="mode: click" class="header_dropdown">
+                        <h4 class="font-bold mb-3"> Bildirimler </h4>
+                        <ul class="dropdown_scrollbar" data-simplebar>
+                            <li>
+                                <a href="/Akademisyenler/Duzenle/7">
+                                    <div class="drop_avatar">
+                                        <img src="~/assets/images/avatars/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="drop_content">
+                                        <p>
+                                            <strong>Rıza Turancan YILMAZ</strong> Staj Başvurusu Yaptı
+                                            <span class="text-link"> Başvuruyu İnceleyin </span>
+                                        </p>
+                                        <span class="time-ago"> 2 saat önce </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Akademisyenler/Duzenle/7">
+                                    <div class="drop_avatar">
+                                        <img src="~/assets/images/avatars/avatar-2.jpg" alt="">
+                                    </div>
+                                    <div class="drop_content">
+                                        <p>
+                                            <strong>Ahmet Faruk EKEN </strong> Staj Başvurusu Yaptı
+                                            <span class="text-link">Başvuruyu İnceleyin</span>
+                                        </p>
+                                        <span class="time-ago"> 9 saat önce </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Akademisyenler/Duzenle/8">
+                                    <div class="drop_avatar">
+                                        <img src="~/assets/images/avatars/avatar-3.jpg" alt="">
+                                    </div>
+                                    <div class="drop_content">
+                                        <p>
+                                            <strong>Ogün BİLGİLİ</strong> Staj Başvurusu Yaptı
+                                            <span class="text-link">Başvuruyu İnceleyin</span>
+                                        </p>
+                                        <span class="time-ago"> 12 saat önce </span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Akademisyenler/Duzenle/9">
+                                    <div class="drop_avatar">
+                                        <img src="~/assets/images/avatars/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="drop_content">
+                                        <p>
+                                            <strong>Yusuf ERYEŞİL</strong> Staj Başvurusu Yaptı
+                                            <span class="text-link">Başvuruyu İnceleyin </span>
+                                        </p>
+                                        <span class="time-ago"> Dün </span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="/akademisyenler/Index" class="see-all">Tümünü Gör</a>
+                    </div>
+
+                    <a href="#" class="header-links-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                        </svg>
+                    </a>
+                    <div uk-drop="mode: click" class="header_dropdown">
+                        <h4 class="font-bold mb-3"> Sorular </h4>
+                        <ul class="dropdown_scrollbar" data-simplebar>
+                            <li>
+                                <a href="/Akademisyenler/CevapEkle/9">
+                                    <div class="drop_avatar">
+                                        <img src="~/assets/images/avatars/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="drop_content">
+                                        <strong> Yusuf Eryeşil </strong> <time> 6:43 PM</time>
+                                        <p>
+                                            Merhaba,
+                                            Başvuru 3'ün son teslim tarihi 10 Ağustos görünüyor fakat saat yazmıyor. Staj yapacağım yer belgeleri 10 Ağustos'ta gün içinde gönderebileceklerini söylüyorlar. Acaba 10 Ağustos 17.00'dan önce de belge yükleyebilecek miyiz Başvuru 3 üzerinden ?
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Akademisyenler/CevapEkle/8">
+                                    <div class="drop_avatar">
+                                        <img src="~/assets/images/avatars/avatar-2.jpg" alt="">
+                                    </div>
+                                    <div class="drop_content">
+                                        <strong> Ogün BİLGİLİ </strong> <time>12:43 PM</time>
+                                        <p> Lorem ipsum dolor sit amet, consectetur </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="/Akademisyenler/SoruCevap" class="see-all">Tümünü Gör</a>
+                    </div>
+
+                    <a href="#">
+                        <img src="~/assets/images/avatars/avatar-2.jpg" class="header-avatar" alt="">
+                    </a>
+                    <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
+                        <ul>
+                            <li>
+                                <a href="/akademisyenler/Index">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                    Staj Başvuruları
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/akademisyenler/SoruCevap">
+                                    @*<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                             stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>*@
+                                    Soru & Cevap
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/akademisyenler/StajDurum">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                    Staj Teslim & Durum Takip
+                                </a>
+                            </li>
+                            <li>
+                                <hr>
+                            </li>
+                            <li><a href="/akademisyenler/Login"> Çıkış Yap </a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        @RenderBody()
+
+
+        <!-- footer -->
+        <div class="bg-gradient-to-bl from-gray-600 pb-8 text-gray-300 to-gray-800">
+            <div class="transform rotate-180">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" class="text-gray-200 fill-current">
+                    <path d="M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z"></path>
+                </svg>
+            </div>
+
+            <div class="container mx-auto pt-16">
+                <div class="flex lg:gap-4 gap-y-3 flex-wrap uk-link-reset">
+
+
+                </div>
+                <hr class="border-gr border-gray-600 my-5">
+                <div class="flex justify-between">
+                    <p> © 2018-2021 Ktun Staj Otomasyon. All rights reserved. </p>
+
+                    <ul class="uk-link-reset text-gray-500 text-xl gap-x-1 flex gap-x-4">
+                        <li>
+                            <a href="#" title="Facebook" data-tippy-placement="top" data-tippy-theme="light">
+                                <i class="icon-brand-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Twitter" data-tippy-placement="top" data-tippy-theme="light">
+                                <i class="icon-brand-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Google Plus" data-tippy-placement="top" data-tippy-theme="light">
+                                <i class="icon-brand-google-plus-g"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="LinkedIn" data-tippy-placement="top" data-tippy-theme="light">
+                                <i class="icon-brand-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts
+       ================================================== -->
+    @*<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>*@
+    <script src="~/assets/js/tippy.all.min.js"></script>
+
+    <script src="~/assets/js/uikit.js"></script>
+    <script src="~/assets/js/simplebar.min.js"></script>
+    <script src="~/assets/js/custom.js"></script>
+    <script src="~/assets/js/bootstrap-select.min.js"></script>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
